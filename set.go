@@ -5,6 +5,7 @@ import (
 )
 
 type Set struct {
+	noCopy
 	data sync.Map
 }
 

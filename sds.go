@@ -2,6 +2,7 @@ package yakv
 
 // SDS is same as simple dynamic string in redis/sds.{h,c}
 type SDS struct {
+	noCopy
 	data []byte
 }
 
