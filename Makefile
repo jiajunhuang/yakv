@@ -4,6 +4,8 @@ COVERPROFILE=
 DEBUG=
 ARGS=
 
+all: fmt test
+
 fmt:
 	go fmt ./...
 
@@ -17,10 +19,10 @@ clean:
 	rm -f yakv
 
 test:
-	go test -cover $(COVERPROFILE) -race $(DEBUG) $(ARGS)
+	go test -cover $(COVERPROFILE) -race $(DEBUG) $(ARGS) ./...
 
 bench:
-	go test -bench=. -benchmem $(ARGS)
+	go test -bench=. -benchmem $(ARGS) ./...
 
 cover:
 	$(eval COVERPROFILE += -coverprofile=coverage.out)
